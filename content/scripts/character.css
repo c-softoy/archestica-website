@@ -1,0 +1,37 @@
+.bordered_image {
+	border: 1px black solid;
+	margin-right: 4px;
+	margin-bottom: 4px;
+}
+
+.statslabel {
+	float: left;
+	width: 150px;
+	font-weight: bolder;
+}
+
+
+.label {
+	font-weight: bold;
+}
+
+.data {
+	font-style: italic;
+}
+
+.row a { 	 
+	text-decoration: none; 	 
+	color: black; 	 
+} 	 
+	
+
+.row { 	 
+	 margin-bottom: 10px; 	 
+} 	 
+	  	 
+.row img { 	 
+	 float: left; 	 
+	 margin-right: 10px; 	 
+	 margin-bottom: 10px; 	 
+	 border: 1px solid black; 	 
+}

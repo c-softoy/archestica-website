@@ -1,0 +1,29 @@
+div.creature { 
+	height: 114px;
+	min-height: 114px;
+	width: 75px;
+	min-width: 75x;
+	text-align: center;
+	padding: 5px;
+	margin: 5px;
+	float: left;
+}
+
+a.creature {
+	text-decoration: none;
+}
+
+img.creature {
+	height: 64px;
+	text-decoration: none;
+	border: none;
+}
+
+div.creature_name {
+	font-size: 12px;
+	font-weight: bolder;
+}
+
+div.creature_level {
+	font-size: 12px;
+}

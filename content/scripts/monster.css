@@ -1,0 +1,22 @@
+.row {
+	margin-bottom: 5px;
+}
+
+.row img {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+
+.row a {
+	text-decoration: none;
+	color: black;
+}
+
+.label {
+	font-weight: bold;
+}
+
+.data {
+	font-style: italic;
+}

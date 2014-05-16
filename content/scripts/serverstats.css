@@ -1,0 +1,37 @@
+.uptime {
+	border: 1px solid black;
+	background: yellow;
+	padding: 4px;
+	margin-bottom: 8px;
+	
+	color: black;
+	text-align: center;
+}
+
+.variable {
+	border: 1px solid black;
+	margin-bottom: 8px;
+}
+
+.variable .title {
+	border-bottom: 1px solid black;
+	background: grey;
+	padding: 4px;
+	
+	color: white;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.variable .label {
+	font-weight: bolder;
+	padding-left: 4px;
+	float: left;
+}
+
+.variable .data {
+	padding-right: 8px;
+	font-style: italic;
+	text-align: right;
+	border-bottom: 1px dotted grey;
+}

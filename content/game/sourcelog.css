@@ -1,0 +1,45 @@
+.sourcetime {
+	color: #555;
+}
+
+.sourceuser {
+	color: #AA0;
+}
+.sourcebranch {
+	color: #A00;
+	background-color: #FF0;
+	font-weight: bold;
+}
+.sourcedevbranch {
+	background-color: #AFA;
+}
+.sourcemodule {
+	color: #00A;
+}
+.sourcefiles {
+	color: #555;
+}
+
+.sourcecommit {
+	color: #000;
+	font-style: italic;
+}
+
+a.sourcerev {
+	text-decoration: none;
+	color: #000;
+}
+a.sourcerev:hover {
+	text-decoration: underline;
+}
+
+
+ul.source {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+ul.source li {
+	margin-bottom: 1em
+}

@@ -1,0 +1,56 @@
+.item {
+	text-align: center;
+}
+
+.item img {
+	border: 1px solid black;
+}
+
+.item .name {
+	text-align: left;
+	font-size: 36px;
+}
+
+.item .level {
+	text-align: left;
+	font-size: 18px;
+}
+
+.item .xp {
+	text-align: left;
+	font-size: 14px;
+}
+
+.item .description {
+	padding: 5px;
+	border: 1px solid #BBBBBB;
+	background: #DDDDDD;
+	font-style: italic;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.row {
+	margin-bottom: 5px;
+}
+
+.row img {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	width: 48px;
+	min-width: 48px;
+}
+
+.row a {
+	text-decoration: none;
+	color: black;
+}
+
+.label {
+	font-weight: bold;
+}
+
+.data {
+	font-style: italic;
+}

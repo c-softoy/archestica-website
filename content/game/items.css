@@ -1,0 +1,57 @@
+.item {
+	height: 84px;
+	min-height: 84px;
+	width: 60px;
+	min-width: 60x;
+	text-align: center;
+	padding: 5px;
+	margin: 5px;
+	float: left;
+}
+
+.f3cols {
+	font-weight: bolder;
+	padding: 4px;
+	margin: 8px;
+	
+	float: left;
+	width: 164px;
+	
+	text-align: center;
+}
+.f3cols img {
+	border: 0;
+}
+
+.f3cols a {
+	text-decoration: none;
+	color: black;
+}
+
+a.item {
+	text-decoration: none;
+}
+
+.title {
+	font-size: 24px;
+	border-bottom: 2px solid black;
+}
+
+a.item {
+	text-decoration: none;
+}
+
+.item_image {
+	height: 32px;
+	text-decoration: none;
+	border: none;
+}
+
+.item_name {
+	font-size: 12px;
+	font-weight: bolder;
+}
+
+.item_description {
+	font-size: 10px;
+}

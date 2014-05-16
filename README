@@ -1,0 +1,138 @@
+			Stendhal Website README
+==============================================================================
+    Copyright (C) 2008-2010  The Arianne Project
+    Copyright (C) 2008  Miguel Angel Blanch Lardin, Hendrik Brummermann
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+==============================================================================
+
+
+  If you just want to play Stendhal you are on the wrong place.
+  Please go to http://arianne.sourceforge.net
+
+
+Hello Stendhal Admin.
+This document guide you about how to setup a Linux box to make Stendhal website 
+works together with your stendhal server, so your players can visualize pretty stats
+and get interesting stats about game.
+
+### Getting Apache, PHP and MySQL (LAMP)
+
+I am assuming you have php installed. I am assuming your apache server knows how
+to deal with php. You might not have php5-mysql installed, you need that too.
+You can install them by writing:
+  
+  apt-get install apache2 php5 php5-mysql mysql-server mysql php5-gd php5-imagick
+
+
+### Getting Stendhal Server
+
+Also I assume that you already have a stendhal server set up, with a database 
+created for the game.
+The stendhal website connects to the stendhal game database to get up to the 
+minute game data.
+
+
+### Configuring
+
+First of all copy configuration.default.php to configuration.php
+
+###### MySQL
+
+You will need to edit configuration.php with the username, pw and db name of the 
+stendhal game db on your system. 
+You won't have a stendhal website db yet.
+So log in to mysql: 
+  
+  mysql -u NAME -p (you may need to be root to create databases!)
+
+And write there this:
+
+  create database stendhal_website;
+  grant all on stendhal_website.* to 'FOO'@'localhost' identified by 'BAR';
+
+Check the username, pw and database name again match those for the website
+database in configuration.php.
+
+Now in the stendhal_website directory run the command  
+
+  mysql stendhal_website -u FOO -p <stendhal_website.sql 
+
+Enter the password when prompted. 
+It should return silently. It has some example news items and events in it already 
+so I guess if you don't like them, edit them first!
+
+###### Postfix
+You need postfix to send emails to remind passwords.
+Just do:
+
+  apt-get install postfix
+
+Configure it so that you have a valid hostname for it.
+Then edit your php.ini file so that:
+
+  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i"). 
+  sendmail_path = /usr/sbin/sendmail -t -i
+
+When you install postfix it should create the appropriate link in /usr/bin.
+
+If you are using Windows you need ot setup a SMTP and configure the php.ini to point
+to there.
+
+###### Stendhal data
+Create a link to stendhal/data folder or copy it here so website knows how to access
+stuff like sprites, items, configurations, etc...
+
+###### Cache
+In order to avoid expensive queries to database and complex XML parsings, 
+ACP can be used for caching.
+
+###### Communication with the game server
+
+In order for the website to communicate with the server, you have to
+define the following configuration settings:
+
+define('STENDHAL_MARAUROA_SERVER', '127.0.0.1');
+define('STENDHAL_MARAUROA_PORT', 32160);
+define('STENDHAL_MARAUROA_CREDENTIALS', '<something random>');
+
+And in server.ini:
+proxy_credentials=<something random>
+
+The credentials are used for authentication, so make sure that you put
+something random in there. It needs to be the same value in both
+configuration.php and server.ini
+
+###### Extra tips
+
+To edit news and events, login with an account from the game server with adminlevel >= 400 
+to the website (top right) and edit the news and events using the GUI.
+To allow people to upload screenshots you need to chmod a+w on your screenshots directory. 
+
+  chmod a+w screenshots
+
+You should probably deactivate magic quotes to avoid double escape of quotes.
+Open /etc/php5/apache2/php.ini (well, that's where it lives for me!) and search for magic_quotes. 
+Turn them off. 
+
+
+
+### Third party libraries
+
+jquery: http://jquery.com/   MIT or GPLv2
+jQuery Tooltip plugin: http://bassistance.de/jquery-plugins/jquery-plugin-tooltip/   MIT or GPL
+jQuery Dimensions plugin: http://bassistance.de/jquery-plugins/jquery-plugin-tooltip/   MIT or GPL
+lightopenid: http://code.google.com/p/lightopenid/   MIT
+openid-selector: http://code.google.com/p/openid-selector/   New BSD
+overlib: http://www.macridesweb.com/oltest/

@@ -1,0 +1,9 @@
+#topMenu,
+#header,
+#leftArea,
+#rightArea,
+#footerArea,
+.time
+{display: none}
+#contentArea {margin:0}
+#container {width:99%; background-image: none}
